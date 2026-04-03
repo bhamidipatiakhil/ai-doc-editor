@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Doc Quick Add",
+    "version": "1.0",
+    "permissions": ["activeTab", "scripting"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_title": "Add To Doc"
+    }
+  }
+  

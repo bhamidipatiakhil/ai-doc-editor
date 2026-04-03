@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>AI Doc Quick Add</title>
+		<style>
+			:root {
+				color-scheme: dark;
+				font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+			}
+
+			body {
+				margin: 0;
+				width: 360px;
+				padding: 12px;
+				background: #0f172a;
+				color: #e2e8f0;
+			}
+
+			.stack {
+				display: grid;
+				gap: 8px;
+			}
+
+			h1 {
+				margin: 0;
+				font-size: 14px;
+				font-weight: 700;
+			}
+
+			p.hint {
+				margin: 0;
+				color: #94a3b8;
+				font-size: 11px;
+			}
+
+			textarea,
+			input {
+				width: 100%;
+				box-sizing: border-box;
+				border: 1px solid #334155;
+				background: #020617;
+				color: #e2e8f0;
+				border-radius: 8px;
+				padding: 10px;
+				font-size: 12px;
+				outline: none;
+			}
+
+			textarea {
+				resize: vertical;
+				min-height: 120px;
+			}
+
+			textarea:focus,
+			input:focus {
+				border-color: #10b981;
+			}
+
+			.row {
+				display: flex;
+				gap: 8px;
+			}
+
+			button {
+				border: 0;
+				border-radius: 8px;
+				padding: 9px 10px;
+				font-size: 12px;
+				font-weight: 600;
+				cursor: pointer;
+			}
+
+			button.primary {
+				background: #10b981;
+				color: #052e16;
+				flex: 1;
+			}
+
+			button.secondary {
+				background: #1d4ed8;
+				color: #dbeafe;
+				flex: 1;
+			}
+
+			button.ghost {
+				background: #334155;
+				color: #e2e8f0;
+			}
+
+			.line {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 10px;
+			}
+
+			.line label {
+				font-size: 11px;
+				color: #94a3b8;
+			}
+
+			.status {
+				min-height: 18px;
+				font-size: 11px;
+				color: #93c5fd;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="stack">
+			<h1>Quick Add</h1>
+			<p class="hint">Paste ideas and send directly into AI Doc Web.</p>
+
+			<textarea
+				id="quickText"
+				placeholder="Paste or type your text here..."
+			></textarea>
+
+			<div class="line">
+				<label for="baseUrl">AI Doc URL</label>
+				<button id="captureSelection" class="ghost" type="button">Capture tab selection</button>
+			</div>
+
+			<input id="baseUrl" value="http://localhost:3000" />
+
+			<div class="line">
+				<label>
+					<input id="includeSource" type="checkbox" checked />
+					Attach source capsule
+				</label>
+			</div>
+
+			<div class="row">
+				<button id="pasteNow" class="primary" type="button">Paste to doc</button>
+				<button id="aiPolish" class="secondary" type="button">AI polish + paste</button>
+			</div>
+
+			<div id="status" class="status"></div>
+		</div>
+
+		<script src="popup.js"></script>
+	</body>
+</html>

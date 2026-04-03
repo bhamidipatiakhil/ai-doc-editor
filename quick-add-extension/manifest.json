@@ -1,0 +1,12 @@
+{
+	"manifest_version": 3,
+	"name": "AI Doc Quick Add",
+	"description": "Quickly capture text and paste it into AI Doc Web.",
+	"version": "1.0.0",
+	"permissions": ["activeTab", "scripting", "storage"],
+	"host_permissions": ["http://localhost:3000/*", "http://127.0.0.1:3000/*"],
+	"action": {
+		"default_title": "AI Doc Quick Add",
+		"default_popup": "popup.html"
+	}
+}
